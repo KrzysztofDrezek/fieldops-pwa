@@ -1,16 +1,55 @@
-# React + Vite
+# FieldOps PWA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FieldOps PWA is an offline-first field incident management application built with React and Vite.
 
-Currently, two official plugins are available:
+The project is designed for recording, managing and synchronising field incidents, especially in situations where internet access may be limited or unavailable.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Current Status
 
-## React Compiler
+Implemented so far:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React + Vite project setup
+- Basic project folder structure
+- React Router configuration
+- Main application layout
+- Sidebar navigation
+- Initial pages:
+  - Dashboard
+  - Incidents
+  - New Incident
+  - Reports
+  - Sync Queue
+  - Settings
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- JavaScript
+- React Router
+- CSS
+
+## Planned Features
+
+- Incident creation form
+- Local data storage
+- Offline-first functionality
+- Sync queue
+- Report generation
+- PWA installation support
+- Basic authentication or user settings
+- Deployment
+
+## Running the Project Locally
+
+Install dependencies:
+
+npm install
+
+Start development server:
+
+npm run dev
+
+Project Purpose
+
+This project is being developed as a portfolio-ready Progressive Web App demonstrating frontend development, offline-first design, routing, data handling and practical user-focused application structure.
