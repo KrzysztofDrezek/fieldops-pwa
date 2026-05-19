@@ -1,0 +1,38 @@
+export const mockIncidents = [
+  {
+    id: 1,
+    title: 'Water leak near storage area',
+    location: 'North Site',
+    priority: 'high',
+    status: 'open',
+    reportedBy: 'Field Team A',
+    createdAt: '2026-05-18',
+  },
+  {
+    id: 2,
+    title: 'Broken access gate',
+    location: 'West Entrance',
+    priority: 'medium',
+    status: 'in_progress',
+    reportedBy: 'Security Team',
+    createdAt: '2026-05-18',
+  },
+  {
+    id: 3,
+    title: 'Safety inspection completed',
+    location: 'Main Office',
+    priority: 'low',
+    status: 'resolved',
+    reportedBy: 'Operations Manager',
+    createdAt: '2026-05-17',
+  },
+  {
+    id: 4,
+    title: 'Power issue in temporary office',
+    location: 'Site Office',
+    priority: 'critical',
+    status: 'open',
+    reportedBy: 'Site Supervisor',
+    createdAt: '2026-05-17',
+  },
+];

@@ -2,8 +2,23 @@ import Card from '../components/ui/Card';
 import PageHeader from '../components/ui/PageHeader';
 import Badge from '../components/ui/Badge';
 import Alert from '../components/ui/Alert';
+import { mockIncidents } from '../data/mockIncidents';
 
 function Dashboard() {
+  const openIncidents = mockIncidents.filter(
+    (incident) => incident.status === 'open'
+  ).length;
+
+  const resolvedIncidents = mockIncidents.filter(
+    (incident) => incident.status === 'resolved'
+  ).length;
+
+  const criticalIncidents = mockIncidents.filter(
+    (incident) => incident.priority === 'critical'
+  ).length;
+
+  const recentIncidents = mockIncidents.slice(0, 3);
+
   return (
     <div className="page">
       <PageHeader
@@ -17,32 +32,31 @@ function Dashboard() {
 
       <div className="grid grid-3">
         <Card title="Open Incidents">
-          <h2>12</h2>
+          <h2>{openIncidents}</h2>
           <p className="card-description">Active reports requiring attention.</p>
         </Card>
 
-        <Card title="Pending Sync">
-          <h2>4</h2>
-          <p className="card-description">Items waiting to be synced.</p>
+        <Card title="Critical Priority">
+          <h2>{criticalIncidents}</h2>
+          <p className="card-description">High-risk incidents in the system.</p>
         </Card>
 
-        <Card title="Resolved Today">
-          <h2>7</h2>
-          <p className="card-description">Incidents closed in the last 24 hours.</p>
+        <Card title="Resolved">
+          <h2>{resolvedIncidents}</h2>
+          <p className="card-description">Incidents currently marked as resolved.</p>
         </Card>
       </div>
 
       <Card title="Recent Activity" description="Latest incident updates from the field.">
         <div style={{ marginTop: '16px', display: 'grid', gap: '12px' }}>
-          <div>
-            <Badge variant="danger">Open</Badge> Water leak reported at North Site
-          </div>
-          <div>
-            <Badge variant="warning">In Progress</Badge> Equipment failure assigned to maintenance
-          </div>
-          <div>
-            <Badge variant="success">Resolved</Badge> Safety inspection completed
-          </div>
+          {recentIncidents.map((incident) => (
+            <div key={incident.id}>
+              <Badge variant={incident.status === 'resolved' ? 'success' : 'warning'}>
+                {incident.status.replace('_', ' ')}
+              </Badge>{' '}
+              {incident.title}
+            </div>
+          ))}
         </div>
       </Card>
     </div>
