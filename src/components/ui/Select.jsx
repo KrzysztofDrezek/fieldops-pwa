@@ -1,17 +1,15 @@
-import './ui.css';
-
-function Select({ label, value, onChange, name, options = [] }) {
+function Select({ id, name, value, onChange, children, className = "", ...props }) {
   return (
-    <label className="form-control">
-      {label && <span className="form-label">{label}</span>}
-      <select className="select" value={value} onChange={onChange} name={name}>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-    </label>
+    <select
+      id={id}
+      name={name}
+      value={value}
+      onChange={onChange}
+      className={`select ${className}`}
+      {...props}
+    >
+      {children}
+    </select>
   );
 }
 

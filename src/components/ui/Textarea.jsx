@@ -1,17 +1,24 @@
-import './ui.css';
-
-function Textarea({ label, placeholder, value, onChange, name }) {
+function Textarea({
+  id,
+  name,
+  value,
+  onChange,
+  placeholder,
+  rows = 4,
+  className = "",
+  ...props
+}) {
   return (
-    <label className="form-control">
-      {label && <span className="form-label">{label}</span>}
-      <textarea
-        className="textarea"
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        name={name}
-      />
-    </label>
+    <textarea
+      id={id}
+      name={name}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      rows={rows}
+      className={`textarea ${className}`}
+      {...props}
+    />
   );
 }
 
